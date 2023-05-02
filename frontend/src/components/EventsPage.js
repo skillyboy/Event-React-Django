@@ -21,7 +21,7 @@ const EventListView = () => {
 
   const handleLikeEvent = async (eventId, isLiked) => {
     try {
-      const response = await axios.post(`/event/${eventId}/like/`, { is_liked: !isLiked });
+      const response = await axios.post(`/event/${eventId}/like`, { is_liked: !isLiked });
       const updatedEvents = events.map((event) => {
         if (event.id === response.data.id) {
           return { ...event, likes_count: response.data.likes_count, is_liked: response.data.is_liked };

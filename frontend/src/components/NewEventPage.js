@@ -32,7 +32,7 @@ function NewEventPage() {
 
     const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
     try {
-      const response = await fetch("/create/event/", {
+      const response = await fetch("/event/create", {
         method: "POST",
         headers: {
           "X-CSRFToken": csrfToken,

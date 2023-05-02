@@ -29,7 +29,7 @@ export default class HomePage extends Component {
               </li>
 
               <li>
-                <Link to="/create/event">Create An Event </Link>
+                <Link to="/event/create">Create An Event </Link>
               </li>
               <li>
                 <Link to="/events">All Events </Link>
@@ -47,7 +47,7 @@ export default class HomePage extends Component {
             </Route>
             
             <Route path="/events" component={EventsPage} />
-            <Route path="/create/event" component={NewEventPage} />
+            <Route path="/event/create" component={NewEventPage} />
             <Route path="/myevents" component={MyEventPage} />
 
           </Switch>
