@@ -10,7 +10,7 @@ class Event(models.Model):
     time = models.TimeField()
     location = models.CharField(max_length=100)
     image = models.ImageField(upload_to='event_images/', blank=True, null=True)
-    likes_count = models.IntegerField(max_length=100, blank=True, null=True)
+    likes_count = models.CharField(max_length=100, blank=True, null=True)
     
     def __str__(self):
         return self.event_name
