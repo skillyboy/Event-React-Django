@@ -1,0 +1,10 @@
+{
+  "name": "react+django",
+  "version": "1.0.0",
+  "main": "src/index.tsx",
+  "description": "react+django is as a Django app",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --watch"
+  }
+}

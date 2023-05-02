@@ -1,0 +1,1 @@
+webpack webpack-cli babel-loader @babel/cli @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/preset-react @babel/runtime react react-dom css-loader mini-css-extract-plugin postcss postcss-cli postcss-loader tailwindcss autoprefixer sass sass-loader typescript ts-loader @types/react @types/react-dom @babel/preset-typescript
