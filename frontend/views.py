@@ -66,23 +66,23 @@ class EventListView(generics.ListAPIView):
 
 
 
-class LikeEventView(APIView):
-    def post(self, request, event_id):
-        event = Event.objects.get(id=event_id)
-        liked_event, created = LikedEvent.objects.get_or_create(user=request.user, event=event)
-        if created or not liked_event.is_liked:
-            liked_event.is_liked = True
-            # event.likes_count = F('likes_count') + 1
-        else:
-            liked_event.is_liked = False
-            # event.likes_count = F('likes_count') - 1
-        liked_event.save()
-        event.save()
-        return Response({
-            'id': event.id,
-            'is_liked': liked_event.is_liked,
-            'likes_count': event.likes_count,
-        }, status=status.HTTP_200_OK)
+@api_view(['POST'])
+def eventlike(request, event_id):
+    event = get_object_or_404(Event, id=event_id)
+    liked_event, created = LikedEvent.objects.get_or_create(user=request.user, event=event)
+    if created or not liked_event.is_liked:
+        liked_event.is_liked = True
+        # event.likes_count += 1
+    else:
+        liked_event.is_liked = False
+        # event.likes_count -= 1
+    liked_event.save()
+    event.save()
+    return Response({
+        'id': event.id,
+        'is_liked': liked_event.is_liked,
+        'likes_count': event.likes_count,
+    }, status=status.HTTP_200_OK)
 
 
 

@@ -17,5 +17,5 @@ urlpatterns = [
    
     path('event/create', EventCreateView.as_view()),
 
-    path('event/<int:event_id>/like', LikeEventView.as_view(), name='likeevent'),
+    path('event/<int:event_id>/like', eventlike),
 ]
